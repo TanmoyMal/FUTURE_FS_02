@@ -31,10 +31,10 @@ function App() {
   const filteredProducts = useMemo(() => {
     let filtered = products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           product.description.toLowerCase().includes(searchQuery.toLowerCase());
+        product.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = !selectedCategory || product.category === selectedCategory;
       const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
-      
+
       return matchesSearch && matchesCategory && matchesPrice;
     });
 
@@ -97,7 +97,7 @@ function App() {
           onLoginClick={() => setIsLoginOpen(true)}
           onSignupClick={() => setIsSignupOpen(true)}
         />
-        
+
         {currentPage === 'home' ? (
           <HomePage onShopNowClick={handleShopNowClick} />
         ) : (
@@ -115,7 +115,7 @@ function App() {
                   onSortChange={setSortBy}
                 />
               </aside>
-              
+
               {/* Main Content */}
               <div className="flex-1">
                 <div className="mb-6">
@@ -128,7 +128,7 @@ function App() {
                     </p>
                   )}
                 </div>
-                
+
                 <ProductList products={filteredProducts} />
               </div>
             </div>

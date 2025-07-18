@@ -67,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             }`}
           >
             <ShoppingCart className="h-4 w-4" />
-            <span>{product.inStock ? 'Add to Cart' : 'Unavailable'}</span>
+            <span>{product.inStock ? 'Cart' : 'Unavailable'}</span>
           </button>
         </div>
       </div>
